@@ -1,0 +1,30 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    list-style-type: none;
+    padding: .25rem !important;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+footer {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:2em;
+    text-align: center;
+    color: black;
+}
+.error {
+    color: red;
+
+}
