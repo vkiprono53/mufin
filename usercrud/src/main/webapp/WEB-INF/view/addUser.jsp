@@ -34,7 +34,7 @@
         <div>
             <div class="col-md-10">
                 <form:form action="/saveOrUpdate"
-                           method="post" name="userForm" id="userForm" modelAttribute="userForm">
+                           method="post" name="userForm" id="userForm" modelAttribute="user">
 
                     <div class="row align-items-end">
                         <div class="form-group col-md-8">

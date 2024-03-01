@@ -251,7 +251,7 @@
                     <div class="card-body">
                         <div class="col-md-10">
                             <form:form action="/login"
-                                       method="post" modelAttribute="userForm">
+                                       method="post" modelAttribute="user">
                                 <form:hidden path="id" />
                                 <div class="row">
 

@@ -8,7 +8,6 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,15 +26,14 @@ public class UserController {
     @GetMapping("/")
     public ModelAndView index() {
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("userForm", new User());
-
+        modelAndView.addObject("user", new  User());
         return modelAndView;
     }
 
     @GetMapping("/addUser")
     public ModelAndView addUser() {
         ModelAndView modelAndView = new ModelAndView("addUser");
-        modelAndView.addObject("userForm", new User());
+        modelAndView.addObject("user", new User());
         return modelAndView;
     }
 
@@ -43,12 +41,12 @@ public class UserController {
     public ModelAndView getUser(@PathVariable("id") Long id) {
         ModelAndView modelAndView = new ModelAndView("addUser");
         User user = userServiceI.findById(id);
-        modelAndView.addObject("userForm", user);
+        modelAndView.addObject("user", user);
         return modelAndView;
     }
 
     @PostMapping("/saveOrUpdate")
-    public String saveOrUpdate(@Valid @ModelAttribute("userForm") User user, BindingResult bindingResult) {
+    public String saveOrUpdate(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()){
 
             return "addUser";
@@ -58,9 +56,9 @@ public class UserController {
     }
 
     @GetMapping("/userDelete/{id}")
-    public String deleteUse(@PathVariable Long id) {
+    public String deleteUser(@PathVariable Long id) {
         userServiceI.delete(id);
-        return "/homePage";
+        return "redirect:/homePage";
     }
 
     @GetMapping("/homePage")
@@ -75,7 +73,7 @@ public class UserController {
     @GetMapping("/loginPage")
     public ModelAndView loginPage() {
         ModelAndView modelAndView = new ModelAndView("loginPage");
-        modelAndView.addObject("userForm", new User());
+        modelAndView.addObject("user", new User());
         return modelAndView;
     }
 
@@ -94,7 +92,7 @@ public class UserController {
         return "redirect:/";
     }
 
-    @PostMapping("/logout")
+    @GetMapping("/logout")
     public String logout() {
 
         return "redirect:/";

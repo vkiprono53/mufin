@@ -30,9 +30,9 @@
     <div class="card">
         <div class="card-body">
             <div class="col-md-10">
-                <form:form action="/saveOrUpdate"
-                           method="post" modelAttribute="userForm">
-                    <form:hidden path="id" />
+                    <form:form action="/saveOrUpdate"
+                               method="post" modelAttribute="user">
+                        <form:hidden path="id" />
                     <div class="row">
                         <div class="form-group col-md-8">
                             <label for="nickname" class="col-form-label">Nickname</label>

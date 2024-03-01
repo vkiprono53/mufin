@@ -21,10 +21,7 @@
         <div class="card-body">
             <div class="container my-5">
                 <p class="my-5">
-                    <a href="/addUser" class="btn btn-primary">
-                        <i class="fas fa-user-plus ml-2">Sign Up1 </i>
-                    </a>
-                    <a href="/logout" class="btn btn-primary">
+                    <a href ="${pageContext.request.contextPath}/logout" class="btn btn-primary">
                         <i class="fas fa-user-plus ml-2">Logout</i>
                     </a>
                 </p>
